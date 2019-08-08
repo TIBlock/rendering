@@ -2,11 +2,15 @@
 function renderCircles(circles) {
     // HINT: You probably need to write a for loop!
     //       Or, if you're feeling fancy, use .map() 
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(circles)}</code>
-        </div>
-    `
+    
+    return circles.map(circle => {
+
+        return `
+            <div class="text-center mt-5">
+                <div style="width:${circle.radius}px; height:${circle.radius}px; border-radius:50%; background-color:${circle.color};"></div>
+            </div>
+        `
+    }).join('')
 }
 
 function circles() {
