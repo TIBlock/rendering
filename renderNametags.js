@@ -30,11 +30,3 @@ function nametags() {
     content.innerHTML = renderNametags(nametagsAbstraction);
 
 }
-
-thing.map(function(things){
-
-})
-
-thing.map(things => {
-    
-})

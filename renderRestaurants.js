@@ -1,12 +1,27 @@
 
 function renderRestaurants(restaurants) {
-    // HINT: You can use <img /> tags that point to these playing card images: 
-    // https://commons.wikimedia.org/wiki/Category:SVG_playing_cards
+    let restChoices = restaurants.map(restInformation).join('');    
     return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(restaurants)}</code>
+    <div class="text-center mt-5">
+        <div class="menu">
+            ${restChoices}
         </div>
+    </div>
     `
+}
+
+
+function restInformation(restaurant){
+    let cost = '$';
+    let finalCost = cost.repeat(restaurant.priceRating);
+    return `
+            <div class="restaurant">
+                <h4 class="name">${restaurant.name}</h>    
+                <div class="type">${restaurant.type}</div>
+                <div class="quality">${finalCost}</div>
+            </div>
+    
+            `    
 }
 
 function restaurants() {

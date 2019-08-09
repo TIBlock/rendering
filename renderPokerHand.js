@@ -1,12 +1,25 @@
 
 function renderPokerHand(pokerHand) {
     // HINT: You can use <img /> tags that point to the card images in the /cards folder
+    let showHand = pokerHand.map(chooseCard).join('');
     return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(pokerHand)}</code>
+        <div class="text-center mt-5 hand">
+        ${showHand}
         </div>
     `
+
 }
+
+function chooseCard(card){
+
+    return `
+    <div class="hand">
+    <img class="card" src='cards/${card.value}${card.suit}.png'/>
+    </div>
+    `
+
+}
+
 
 function pokerHand() {
     var content = document.getElementById('content');
