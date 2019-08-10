@@ -1,11 +1,29 @@
 
 function renderMovies(movies) {
+    let movieFill = movies.map(movieInfo).join('');
     return `
         <div class="text-center mt-5">
-            <code>${JSON.stringify(movies)}</code>
+            ${movieFill}
         </div>
-    `
+        `
 }
+
+function movieInfo(movies){
+
+return    `
+<div class="movie_block">
+    <img class='movie_poster' src='${movies.poster}'>
+    <div class="movie_info">
+        <div class="movie_title">${movies.title}
+            <div class="movie_year">${movies.year}</div>
+        </div> 
+        <div class="movie_rating">IMDB:<br>${movies.imdbRating}/10</div>
+        <div class="rotten_tomatoes">Rotten Tomatoes:<br>${movies.rottenTomatoesRating*100}%</div>  
+    </div><br>
+</div>
+`
+}
+s
 
 function movies() {
     var content = document.getElementById('content');

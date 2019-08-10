@@ -12,8 +12,7 @@ function renderRestaurants(restaurants) {
 
 
 function restInformation(restaurant){
-    let cost = '$';
-    let finalCost = cost.repeat(restaurant.priceRating);
+    let finalCost = '$'.repeat(restaurant.priceRating);
     return `
             <div class="restaurant">
                 <h4 class="name">${restaurant.name}</h>    

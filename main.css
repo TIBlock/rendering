@@ -100,3 +100,56 @@
     text-align: left;
     color: #5DB22D
 }
+
+/* Render Movies CSS */
+
+.movie_block
+{
+    background-color: #AEAEAE;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+    margin: 7%;
+}
+
+.movie_poster
+{
+    flex:1;
+    object-fit: contain;
+    margin: 3%;
+    width: 25vw;
+}
+
+.movie_info
+{
+    display: flex;
+    flex:1;
+    background-color: white;
+    border-radius: 10px;
+    padding: 3%;
+    flex-direction: column;
+    margin: 3% 3% 3% 0%;
+    justify-content: space-between;
+    font-size: 2em;
+
+}
+
+.movie_title
+{
+    font-weight: bold;
+    margin-bottom: 0;
+    /* margin-top: 3% */
+    font-size: 
+}
+
+.movie_year
+{
+    font-size: .5em
+}
+
+.movie_rating
+{
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
