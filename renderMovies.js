@@ -23,7 +23,7 @@ return    `
 </div>
 `
 }
-s
+
 
 function movies() {
     var content = document.getElementById('content');

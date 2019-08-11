@@ -140,7 +140,7 @@
     font-weight: bold;
     margin-bottom: 0;
     /* margin-top: 3% */
-    font-size: 
+    /* font-size:  */
 }
 
 .movie_year
@@ -152,4 +152,94 @@
 {
     margin-top: 3%;
     margin-bottom: 3%;
+}
+
+/* Render Tweets CSS */
+
+.tweet_body
+{
+    font-size: 2.5em;   
+    border: 1px black solid;
+    margin-bottom: 1.5em;
+    padding: .5em;
+    width:16em;
+}
+
+.tweet_header
+{
+    display: flex;
+    font-size: .5em;
+}
+
+
+.profile_pic
+{
+    align-self: flex-start;
+    height: 2.5em;
+    margin: .03em;
+}
+
+.user_info
+{
+    display: flex;
+    flex-direction: column;
+    margin: .5em;
+}
+
+h5
+{
+    margin-bottom: 0;   
+}
+
+.user_handle
+{
+    color: gray;
+    font-size: .6em;
+    opacity: 50%;
+    text-align: left;
+}
+
+.tweet_text
+{
+    font-size: .8em;
+    text-align: left;
+    line-height: 1.1em;
+}
+
+.tweet_footer
+{
+    display:flex;
+    font-size: .4em;   
+    margin-bottom: 0;  
+}
+
+.footer_content
+{
+    margin: 0em .5em 0em .5em;
+}
+
+.comment_icon
+{
+    width: 1em;
+}
+
+.retweet_icon
+{
+    width: 1em;
+}
+
+.like_icon
+{
+    width: 1em;
+}
+
+.email_icon
+{
+    width: 1em;
+    margin-left: .5em;
+}
+
+.user_verified
+{
+    width:1.2em;
 }
