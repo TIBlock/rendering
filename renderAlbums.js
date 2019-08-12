@@ -2,10 +2,12 @@
 function renderAlbums(albums) 
 {
     let artistInfo = albums.map(parseAlbums).join('');
+    let artistName = albums.map(artistNameSearch).join('')
 
     return `
         <div class="text-center mt-5">
             <div class="playlist_block">
+                <div class="artist_name">${artistName}</div>
                 <div>
                 ${artistInfo}
                 </div>
@@ -13,6 +15,15 @@ function renderAlbums(albums)
         </div>
     `
 }
+
+function artistNameSearch(albums)
+{   let name = "";
+    for (let artist in albums) {
+        name = albums.artist;
+    }
+    return name;
+}
+
 
 function parseAlbums(searchAlbums)
 {
