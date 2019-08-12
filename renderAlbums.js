@@ -1,11 +1,78 @@
 
-function renderAlbums(albums) {
+function renderAlbums(albums) 
+{
+    let artistInfo = albums.map(parseAlbums).join('');
+    // let artistSongs = albums.map(parseSongs).join('');
+
     return `
         <div class="text-center mt-5">
-            <code>${JSON.stringify(albums)}</code>
+            <div class="playlist_block">
+                <div>
+                ${artistInfo}
+                </div>
+            </div>
         </div>
     `
 }
+var i, j, x = "";
+// function parseAlbums(searchAlbums)
+// {
+//     for (i in searchAlbums.albums) {
+//         x += "<h2>" + searchAlbums.albums[i].name + "</h2>";
+//         for (j in searchAlbums.albums[i].models) {
+//           x += searchAlbums.albums[i].songs[j] + "<br>";
+//         }
+//         console.log(`${searchAlbums.albums[i].title}`)
+//       }
+
+// }
+
+function parseAlbums(searchAlbums)
+{
+    let albumHTML = "";
+    for (let i = 0; i < searchAlbums.albums.length; i++) {
+        let albumSongHTML = "";
+        for (let j = 0; j < searchAlbums.albums[i].songs.length; j++) {
+            albumSongHTML += `
+            <div class="song_title"><img class="play_button" src=""/>${searchAlbums.albums[i].songs[j].title}</div>
+            <div class="song_length">${searchAlbums.albums[i].songs[j].length}</div>
+            `
+        }
+        albumHTML +=  `
+        <div class="album_title"><img class="album_cover" src="${searchAlbums.albums[i].albumCover}"/>${searchAlbums.albums[i].title}</div>
+        <hr>` + albumSongHTML;
+    }
+    return albumHTML
+    
+}
+// console.log(Object.albums.albums.length)
+
+
+//         let albumInfo = albums.albums.map().join('');
+
+//     return `
+//         <div class="artist_name">${albums.artist}</div>
+//         <hr>
+//         <div class="album_title"><img class="album_cover" src="${albumInfo.albumCover}"/>${albums.albums.title}</div>
+//         <hr>
+//     `
+
+// function parseSongs(albums)
+// {
+//     return `
+//         <div>
+//             <div class="song_title"><img class="play_button" src=""/>${albums.albums.title}</div>
+//             <div class="song_length">${albums.albums.title}</div>
+//         </div>
+//     `
+
+
+
+
+
+// }
+
+
 
 function albums() {
     var content = document.getElementById('content');

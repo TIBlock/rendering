@@ -1,6 +1,7 @@
   
 function renderStudents(students) {
     var studentsHTML = students.map(renderStudent).join('');
+    
     return `
         <div class="text-center mt-5 roll_container">
             <h1 class="roll_call">Roll Call!</h1>

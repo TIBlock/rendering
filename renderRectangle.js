@@ -19,4 +19,4 @@ function rectangle() {
     content.innerHTML = renderRectangle(rectangleAbstraction);
 
 }
-console.log(rectangle.width)
+// console.log(rectangle.width)
