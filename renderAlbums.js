@@ -7,8 +7,8 @@ function renderAlbums(albums)
     return `
         <div class="text-center mt-5">
             <div class="playlist_block">
-                <div class="artist_name">${artistName}</div>
-                <div>
+                <div class="artist_name">${artistName.toUpperCase()}</div>
+                <div class="info_container">
                 ${artistInfo}
                 </div>
             </div>
@@ -32,12 +32,15 @@ function parseAlbums(searchAlbums)
         let albumSongHTML = "";
         for (let j = 0; j < searchAlbums.albums[i].songs.length; j++) {
             albumSongHTML += `
-            <div class="song_title"><img class="play_button" src=""/>${searchAlbums.albums[i].songs[j].title}</div>
+            <div class="song_container">
+            <div class="song_title"><i class="play_button fas fa-play"></i>${searchAlbums.albums[i].songs[j].title}</div>
             <div class="song_length">${searchAlbums.albums[i].songs[j].length}</div>
+            </div>
+            <hr>
             `
         }
         albumHTML +=  `
-        <div class="album_title"><img class="album_cover" src="${searchAlbums.albums[i].albumCover}"/>${searchAlbums.albums[i].title}</div>
+        <div class="album_title"><img class="album_cover" src="${searchAlbums.albums[i].albumCover}"/><span>${searchAlbums.albums[i].title}</span></div>
         <hr>` + albumSongHTML;
     }
     return albumHTML

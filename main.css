@@ -245,3 +245,56 @@ h5
 }
 
 /* Render Albums CSS */
+
+.playlist_block
+{
+    font-size: 2.5em;
+    display: flex;
+    flex-direction: column;
+    max-width: 22em;
+}
+
+.artist_name
+{
+    text-align: left;
+    font-size: 1.6em;
+    border-bottom: 1px lightgray solid;
+    /* margin-bottom: .3em; */
+}
+
+.album_title
+{
+    display: flex;
+
+}
+
+.album_cover
+{
+    width: 2em;
+    text-align:left;
+    margin-top: .9em;
+    
+}
+
+.album_title span
+{
+    font-size: .7em;
+    text-align: left;
+    position: relative;
+    padding-top: 2.7em;
+    padding-left:.5em;
+}
+
+.song_container
+{
+    font-size: .5em;
+    display: flex;
+    justify-content: space-between;
+    /* vertical-align: text-bottom; */
+}
+
+.play_button
+{
+    margin-right: .6em;
+}
+
