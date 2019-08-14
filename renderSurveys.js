@@ -24,15 +24,20 @@ function surveyContent(surveys)
 
 
     //May need to nest survey items in above function like albums.
-    
     let surveyItems = "";
-
-    surveys.fields.
+    surveys.fields.forEach(element => {
+        if (element.type === "radio") {
+            surveyItems += `    
+                    <input type="${element.type}" name="survey_input" value="${element.options}" class="survey_type">${element.options}<br>
+                `
+        }
+    });
 
     return `
         <div>
             <div class="survey_title">${surveys.title}</div>
             <div class="survey_question">${question}</div>
+            <div class="survey_input">${surveyItems}</div>
                 <div class="button_container">
                 </div>
         </div>
