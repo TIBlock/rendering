@@ -11,33 +11,59 @@ function renderSurveys(surveys)
 }
 
 
+//make smaller functions, renderRadioInput, RenderTextInput
+// used by "renderquestion"
+
+
+function renderRadioInput(element,index,label)
+{
+    let surveyItems = "";
+    element.options.forEach((element) => 
+    {
+        surveyItems += `    
+            <label><input type="radio" name="survey_input_${index}_${label}" value="${element}" class="radio_input">${element}<br></label>
+        `
+    });
+    return surveyItems
+}
+
+function RenderTextInput(element)
+{
+    let surveyItems = `   
+            <input type="text" name="survey_input" class="text_input"><br>
+        `
+    return surveyItems
+}
 
 function surveyContent(surveys)
 {
     let question = "";
-    surveys.fields.forEach(element => {
-        question += `
-        <div class="survey_question">${element.label}</div><br>
-        `;
-        return question;
-    });
-
+        surveys.fields.forEach((element, index) => 
+        {
+            let surveyLabel = surveys.title.toLowerCase().split(' ').join('_')
+            let surveyItems = "";
+            if (element.type === "radio") 
+            {
+                surveyItems += renderRadioInput(element, index, surveyLabel)
+            } 
+            else 
+            {
+                surveyItems += RenderTextInput(element)
+            }
+            question += `
+            <div class="survey_question">${element.label}</div>
+            ${surveyItems}<br>
+            `;
+            return question;
+        });
+    
 
     //May need to nest survey items in above function like albums.
-    let surveyItems = "";
-    surveys.fields.forEach(element => {
-        if (element.type === "radio") {
-            surveyItems += `    
-                    <input type="${element.type}" name="survey_input" value="${element.options}" class="survey_type">${element.options}<br>
-                `
-        }
-    });
 
     return `
         <div>
             <div class="survey_title">${surveys.title}</div>
-            <div class="survey_question">${question}</div>
-            <div class="survey_input">${surveyItems}</div>
+            ${question}
                 <div class="button_container">
                 </div>
         </div>
