@@ -10,7 +10,6 @@ function renderSurveys(surveys)
     `
 }
 
-
 //make smaller functions, renderRadioInput, RenderTextInput
 // used by "renderquestion"
 
@@ -56,9 +55,6 @@ function surveyContent(surveys)
             `;
             return question;
         });
-    
-
-    //May need to nest survey items in above function like albums.
 
     return `
         <div>
@@ -67,26 +63,8 @@ function surveyContent(surveys)
                 <div class="button_container">
                 </div>
         </div>
-    `
-    // function askQuestion(surveys) {
-        
-        // }
-        
+    `       
 }
-        // console.dir(surveys.fields[0].label)
-
-
-    // write an if statement that can tell what type of content the survey needs and add each element to the total survey
-// IE you can have a bunch of buttons, or a bunch of texts etc, just depends on what value is requested in the data. 
-
-//Start by just getting the titles of the sureys to show then down from there. 
-
-
-
-// function renderButtons(surveys)
-
-
-
 
 function surveys() {
     var content = document.getElementById('content');
