@@ -57,7 +57,7 @@ function surveyContent(surveys)
         });
 
     return `
-        <div>
+        <div class="survey_body">
             <div class="survey_title">${surveys.title}</div>
             ${question}
                 <div class="button_container">
