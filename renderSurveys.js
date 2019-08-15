@@ -19,8 +19,8 @@ function renderRadioInput(element,index,label)
     let surveyItems = "";
     element.options.forEach((element) => 
     {
-        surveyItems += `    
-            <label><input type="radio" name="survey_input_${index}_${label}" value="${element}" class="radio_input">${element}<br></label>
+        surveyItems += `
+            <label><input class="radio_button" type="radio" name="survey_input_${index}_${label}" value="${element}" class="radio_input">${element}</label>
         `
     });
     return surveyItems
@@ -29,7 +29,7 @@ function renderRadioInput(element,index,label)
 function RenderTextInput(element)
 {
     let surveyItems = `   
-            <input type="text" name="survey_input" class="text_input"><br>
+            <textarea rows="4" cols="25" name="survey_input" class="text_input"></textarea>
         `
     return surveyItems
 }
@@ -49,9 +49,10 @@ function surveyContent(surveys)
             {
                 surveyItems += RenderTextInput(element)
             }
+
             question += `
             <div class="survey_question">${element.label}</div>
-            ${surveyItems}<br>
+            ${surveyItems}
             `;
             return question;
         });
@@ -59,9 +60,10 @@ function surveyContent(surveys)
     return `
         <div class="survey_body">
             <div class="survey_title">${surveys.title}</div>
+            <div class="question_container">
             ${question}
-                <div class="button_container">
-                </div>
+            </div>
+            <button class="submit_button">Submit Survey</button>
         </div>
     `       
 }

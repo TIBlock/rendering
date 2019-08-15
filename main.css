@@ -300,3 +300,51 @@ h5
 
 /* Render Survey CSS */
 
+.survey_body
+{
+    font-size: 2.5vw;
+    max-width: 30em;
+    display:flex;
+    flex-direction: column;
+}
+
+.survey_title
+{
+    font-size: 2em;
+    border-bottom: 1px black solid;
+    text-align: left;
+    margin-bottom: .5em;
+}
+.question_container
+{
+    font-size: 1.4em;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.survey_question
+{
+    margin: .2em .2em .6em .2em;
+}
+
+input[type="radio"] 
+{
+    margin-right: 1.5em;
+    margin-left: .5em;
+    align-items: center;
+}
+
+label
+{
+    font-size: .7em;
+}
+
+.submit_button
+{
+    width: 25%;
+    margin: 1em;
+    background-color: #007EF7;
+    color: white;
+    border-radius: 5px;
+}

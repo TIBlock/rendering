@@ -1,22 +1,19 @@
 
-function renderCircles(circles) {
-    // HINT: You probably need to write a for loop!
-    //       Or, if you're feeling fancy, use .map() 
-    
-    return circles.map(circle => {
+function buildCircleHTML (circle) {
+    return `
+    <div class="text-center mt-5">
+        <div style="width:${circle.radius}px; height:${circle.radius}px; border-radius:50%; background-color:${circle.color};"></div>
+    </div>
+`
+}
 
-        return `
-            <div class="text-center mt-5">
-                <div style="width:${circle.radius}px; height:${circle.radius}px; border-radius:50%; background-color:${circle.color};"></div>
-            </div>
-        `
-    }).join('')
+function buildCirclesHTML (circles) {
+    const circlesHTML = circles.map(buildCircleHTML)
+    return circlesHTML.join('')
 }
 
 function circles() {
-    var content = document.getElementById('content');
-
-    var circlesAbstraction = [
+    const circlesAbstraction = [
         {
             radius: 50,
             color: "#FF00FF"
@@ -35,6 +32,6 @@ function circles() {
         },
     ];
 
-    content.innerHTML = renderCircles(circlesAbstraction);
-
+    const contentEl = document.getElementById('content');
+    contentEl.innerHTML = buildCirclesHTML(circlesAbstraction);
 }
